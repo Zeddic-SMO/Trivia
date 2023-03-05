@@ -16,7 +16,10 @@ function HighScore() {
   let { initials, scores, quizQuestion } = useContext(QuizContext)
   return (
     <div style={styleDiv}>
-      <p> Hi {initials.initials} you did a great job!</p>
+      <p>
+        {" "}
+        Hi <b>{initials.initials}</b>, you did a great job!
+      </p>
 
       <h4>Scores: {scores + " / " + quizQuestion.length}</h4>
 

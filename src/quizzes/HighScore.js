@@ -7,25 +7,22 @@ const styleDiv = {
   borderRadius: "25px",
   boxShadow: "5px 5px 4px #ccc",
   height: "220px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
 }
 
 function HighScore() {
-  let { initials, scores } = useContext(QuizContext)
+  let { initials, scores, quizQuestion } = useContext(QuizContext)
   return (
     <div style={styleDiv}>
-      <h1>High Scores</h1>
-      <ol>
-        <li>
-          <h3>
-            {initials.initials} - {scores}
-          </h3>
-        </li>
-      </ol>
+      <p> Hi {initials.initials} you did a great job!</p>
+
+      <h4>Scores: {scores + " / " + quizQuestion.length}</h4>
 
       <button className="btn" style={{ marginRight: "10px" }}>
-        Go Back
+        Done!
       </button>
-      <button className="btn">Clear High Scores</button>
     </div>
   )
 }

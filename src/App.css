@@ -3,11 +3,18 @@ body {
   font-size: 16px;
   margin: 0;
 }
+.main-home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 main {
-  height: calc(100vh - 140px);
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 40px 0px;
 }
 
 .container {
@@ -15,8 +22,7 @@ main {
   padding: 35px;
   border-radius: 25px;
   box-shadow: 5px 5px 4px #ccc;
-  width: 50%;
-  /* height: 220px; */
+  width: 40%;
 }
 
 button {
@@ -31,4 +37,9 @@ button:hover {
   background-color: aliceblue;
   color: #000;
   border: 1px solid black;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
 }

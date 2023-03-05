@@ -5,10 +5,7 @@ const displayDate = new Date().getFullYear()
 function Footer() {
   return (
     <div className="Footer">
-      <p>
-        &copy; {displayDate} All Rights Reserve - Ortil Samuel M. || SideHustle
-        BootCamp Project
-      </p>
+      <p>&copy; {displayDate}</p>
     </div>
   )
 }

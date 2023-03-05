@@ -3,7 +3,7 @@ import { QuizContext } from "../quizContext"
 import HighScore from "./HighScore"
 
 function Scores() {
-  let { quizQuestion, scores, initials, setInitials } = useContext(QuizContext)
+  let { initials, setInitials } = useContext(QuizContext)
 
   let [highScore, setHighScore] = useState(false)
 
@@ -21,15 +21,10 @@ function Scores() {
     <>
       <div className="container" style={{ textAlign: "center" }}>
         <h2>All Done!</h2>
-        <p>
-          Your final score is{" "}
-          <h3 style={{ display: "inline-block" }}>
-            {scores + " / " + quizQuestion.length}
-          </h3>
-        </p>
+        <p>To view your scores enter your First Name below!</p>
         <p>
           <form onSubmit={handleSubmit}>
-            Enter initials:{" "}
+            First Name:{" "}
             <input
               type="text"
               name="initials"

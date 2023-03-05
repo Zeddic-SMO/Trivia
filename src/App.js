@@ -7,7 +7,6 @@ import Header from "./components/Header"
 
 function App() {
   let { isLoadQuiz, setIsLoadQuiz } = useContext(QuizContext)
- 
 
   const loadQuizQuestions = () => {
     isLoadQuiz = true
@@ -16,25 +15,22 @@ function App() {
   const StartCard = () => {
     return (
       <div className="container">
-        <h1>Coding Quiz Challenge</h1>
+        <h1>QUIZ:</h1>
+        <h3>Trustworthy Trivia</h3>
+        <hr />
         <p>
-          Try to answer the following code-related questions within the time
-          limit.
-        </p>
-        <p>
-          Keep in mind that incorrect answer will penalize your score/time by
-          ten seconds!
+          Click on the <b>START QUIZ</b> button to get started!
         </p>
         <button onClick={loadQuizQuestions}>Start Quiz</button>
       </div>
     )
   }
   return (
-    <>
+    <div className="main-home">
       <Header />
       <main>{isLoadQuiz ? <Question /> : <StartCard />}</main>
       <Footer />
-    </>
+    </div>
   )
 }
 

@@ -50,7 +50,7 @@ function Question() {
         <small>
           Question: <b>{currentQuestion + 1 + " / " + quizQuestion.length}</b>
         </small>
-        <h2>{quizQuestion[currentQuestion].questionText}</h2>
+        <h3>{quizQuestion[currentQuestion].questionText}</h3>
         {quizQuestion[currentQuestion].options.map((option) => {
           return (
             <div>

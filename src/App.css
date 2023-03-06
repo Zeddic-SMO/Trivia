@@ -26,11 +26,11 @@ main {
   position: relative;
 }
 .container > img {
-  width: 100px;
+  width: 120px;
   position: absolute;
   background: transparent;
-  top: 0;
-  right: 10px;
+  top: -40px;
+  right: 5px;
 }
 
 button {

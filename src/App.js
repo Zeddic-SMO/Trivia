@@ -2,9 +2,6 @@ import React, { useContext } from "react"
 import { QuizContext } from "./quizContext"
 import "./App.css"
 import Question from "./quizzes/Question"
-import Footer from "./components/Footer"
-import Header from "./components/Header"
-
 
 function App() {
   let { isLoadQuiz, setIsLoadQuiz } = useContext(QuizContext)
@@ -31,9 +28,7 @@ function App() {
   }
   return (
     <div className="main-home">
-      <Header />
       <main>{isLoadQuiz ? <Question /> : <StartCard />}</main>
-      <Footer />
     </div>
   )
 }

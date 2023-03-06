@@ -2,13 +2,13 @@
   display: block;
   padding: 10px;
   margin: 10px 0px;
-  border-radius: 3px;
+  /* border-radius: 3px; */
   color: #000;
   width: 95%;
   background-color: #f5a623;
   cursor: pointer;
   border: 1px solid #f5a623;
-  box-shadow: 2px 2px 5px #66f;
+  /* box-shadow: 2px 2px 5px #66f; */
 }
 
 .spanStyle:hover {

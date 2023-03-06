@@ -8,6 +8,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: url("./img/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 main {
   flex: 1;
@@ -20,17 +23,20 @@ main {
 .container {
   border: 1px solid #ccc;
   padding: 35px;
-  border-radius: 25px;
-  box-shadow: 5px 5px 4px #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #333;
   width: 40%;
   position: relative;
+  background-color: #fff;
 }
 .container > img {
   width: 120px;
   position: absolute;
   background: transparent;
-  top: -40px;
-  right: 5px;
+  top: -50px;
+  right: 0;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px #ccc;
 }
 
 button {

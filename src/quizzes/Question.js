@@ -1,4 +1,6 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
+import { toast } from "react-toastify"
+import Modal from "../components/Modal/Modal"
 import { QuizContext } from "../quizContext"
 import "./Question.css"
 import Scores from "./Scores"
@@ -16,15 +18,39 @@ function Question() {
     setScores,
   } = useContext(QuizContext)
 
+  const [openModal, setOpenModal] = useState(false)
+
   const checkAns = (option) => {
     if (option === quizQuestion[currentQuestion].answer) {
       answerNotification = "Correct!"
+      toast.success("CORRECT!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      })
+      setOpenModal(true)
       setAnswerNotification(answerNotification)
 
       scores = scores + 1
       setScores(scores)
     } else {
       answerNotification = "Incorrect!"
+      toast.error("INCORRECT!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      })
+      setOpenModal(true)
       setAnswerNotification(answerNotification)
     }
 
@@ -34,9 +60,10 @@ function Question() {
         setCurrentQuestion(currentQuestion)
 
         answerNotification = "Select an Option"
+        setOpenModal(false)
         setAnswerNotification(answerNotification)
       }
-    }, 1000)
+    }, 3000)
 
     if (currentQuestion === quizQuestion.length) {
       checkEndOfQuiz = true
@@ -47,10 +74,12 @@ function Question() {
   const Quiz = () => {
     return (
       <div className="container">
+        {openModal && <Modal answerNotification={answerNotification} />}
+        <img src={require("../img/que.gif")} alt="" />
         <small>
           Question: <b>{currentQuestion + 1 + " / " + quizQuestion.length}</b>
         </small>
-        <h3>{quizQuestion[currentQuestion].questionText}</h3>
+        <h4>{quizQuestion[currentQuestion].questionText}</h4>
         {quizQuestion[currentQuestion].options.map((option) => {
           return (
             <div>

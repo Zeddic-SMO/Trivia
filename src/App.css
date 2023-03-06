@@ -23,6 +23,14 @@ main {
   border-radius: 25px;
   box-shadow: 5px 5px 4px #ccc;
   width: 40%;
+  position: relative;
+}
+.container > img {
+  width: 100px;
+  position: absolute;
+  background: transparent;
+  top: 0;
+  right: 10px;
 }
 
 button {
@@ -30,7 +38,7 @@ button {
   border-radius: 8px;
   border: none;
   color: #fff;
-  background-color: #218380;
+  background-color: #66f;
   font-weight: bold;
 }
 button:hover {

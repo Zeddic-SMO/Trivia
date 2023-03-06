@@ -18,34 +18,6 @@ const QuizProvider = (props) => {
   //   Check End of Quiz State
   let [checkEndOfQuiz, setCheckEndOfQuiz] = useState(false)
 
-  // Timer State
-  let [counter, setCounter] = useState(50)
-
-  /*
-  let activeCounterRef = useRef(null).current
-
-   useEffect(() => {
-    if (isLoadQuiz === true) {
-      // console.log("timer starts")
-      activeCounterRef = setInterval(activeCount, 1000)
-    }
-
-    if (counter === 0) {
-      // console.log("cleared", activeCounterRef)
-      setIsLoadQuiz(false)
-      setCheckEndOfQuiz(true)
-    }
-
-    return () => {
-      clearInterval(activeCounterRef)
-    }
-  }, [isLoadQuiz, counter])
-
-  const activeCount = () => {
-    counter -= 10
-    setCounter(counter)
-  } */
-
   //   Correct or Wrong Answer Notification State
   let [answerNotification, setAnswerNotification] =
     useState("Select an option!")
@@ -75,8 +47,6 @@ const QuizProvider = (props) => {
     setScores,
     initials,
     setInitials,
-    counter,
-    setCounter,
   }
 
   //   Return below

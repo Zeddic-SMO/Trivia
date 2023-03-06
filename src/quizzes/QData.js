@@ -5,7 +5,6 @@ const questions = [
       "1. A high school dropout with no experience in property management",
       "2. A self-taught handyman who has never managed property before",
       "3. A licensed and experienced property manager with positive references",
-      "4. An animal trainer with no relevant experience",
     ],
     answer:
       "3. A licensed and experienced property manager with positive references",

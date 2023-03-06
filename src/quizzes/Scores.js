@@ -3,14 +3,30 @@ import { QuizContext } from "../quizContext"
 import HighScore from "./HighScore"
 
 function Scores() {
-  let { initials, setInitials } = useContext(QuizContext)
+  let { initials, setInitials, scores } = useContext(QuizContext)
 
   let [highScore, setHighScore] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     highScore = true
     setHighScore(highScore)
+
+    const response = await fetch("https://trivia-be.onrender.com/api/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ firstName: initials.initials, scores: scores }),
+    })
+
+    if (response.status === 200) {
+      console.log("Success")
+    }
+    // const data = await response.json()
+    // console.log(data)
+
+    // console.log({ firstName: initials.initials, scores: scores })
   }
   const handleChange = (e) => {
     setInitials({ ...initials, initials: e.target.value })

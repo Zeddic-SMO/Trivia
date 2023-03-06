@@ -5,6 +5,7 @@ import Question from "./quizzes/Question"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 
+
 function App() {
   let { isLoadQuiz, setIsLoadQuiz } = useContext(QuizContext)
 
@@ -17,9 +18,12 @@ function App() {
       <div className="container">
         <h1>QUIZ:</h1>
         <h3>Trustworthy Trivia</h3>
+        <img src={require("./img/question.gif")} alt="loading" />
         <hr />
         <p>
-          Click on the <b>START QUIZ</b> button to get started!
+          <small>
+            Click on the <b>START QUIZ</b> button to get started!
+          </small>
         </p>
         <button onClick={loadQuizQuestions}>Start Quiz</button>
       </div>
